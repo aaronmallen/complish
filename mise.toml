@@ -1,0 +1,8 @@
+[task_config]
+includes = ["tasks.toml"]
+
+[tools]
+editorconfig-checker = "latest"
+markdownlint-cli2 = "latest"
+taplo = "latest"
+yamlfmt = "latest"

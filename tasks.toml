@@ -1,0 +1,35 @@
+[format]
+description = "Run all formatters"
+depends = ["format:**"]
+
+["format:markdown"]
+description = "Format markdown files"
+run = "markdownlint-cli2 . --fix"
+
+["format:toml"]
+description = "Format toml files"
+run = "taplo format"
+
+["format:yaml"]
+description = "Format yaml files"
+run = "yamlfmt ."
+
+[lint]
+description = "Run all lint checks"
+depends = ["lint:**"]
+
+["lint:editorconfig"]
+description = "Lint the project using editorconfig-checker"
+run = "editorconfig-checker"
+
+["lint:markdown"]
+description = "Lint markdown files"
+run = "markdownlint-cli2 ."
+
+["lint:toml"]
+description = "Lint toml files"
+run = "taplo lint"
+
+["lint:yaml"]
+description = "Lint yaml files"
+run = "yamlfmt . --lint"

@@ -1,0 +1,29 @@
+name: Build
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - uses: jdx/mise-action@v3
+      - name: Editorconfig Lint
+        run: mise run lint:editorconfig
+      - name: Markdown Lint
+        run: mise run lint:markdown
+      - name: YAML Lint
+        run: mise run lint:yaml
+      - name: TOML Lint
+        run: mise run lint:toml
