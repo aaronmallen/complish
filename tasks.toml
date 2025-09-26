@@ -22,6 +22,10 @@ depends = ["lint:**"]
 description = "Lint the project using editorconfig-checker"
 run = "editorconfig-checker"
 
+["lint:github-actions"]
+description = "Lint github actions and workflows"
+run = "actionlint"
+
 ["lint:markdown"]
 description = "Lint markdown files"
 run = "markdownlint-cli2 ."
